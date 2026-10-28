@@ -25,6 +25,7 @@
 [🚀 Getting Started](#-getting-started) •
 [🔬 Methodology](#-methodology) •
 [🤝 Contributing](#-contributing) •
+[💖 Support](#-support) •
 [📈 Star History](#-star-history) •
 [📜 License](#-license)
 
@@ -159,6 +160,23 @@ Contributions of new IMO, USAMO, Putnam, or RMM brute-force scripts are welcome!
 3. 📝 Follow standard naming: `imo_<year>_P<problem>_brute.py`.
 4. 💬 Include problem descriptions, invariants, and test outputs in the header comments.
 5. 🚀 Open a Pull Request.
+
+---
+
+## 💖 Support
+
+If you found this repository helpful, insightful, or fun for exploring IMO math and combinatorial simulations:
+
+- ⭐ **Star this repository** to show your support and help others discover it!
+- 🍴 **Fork it** and add your own Olympiad problem explorations.
+- 📢 **Share it** with fellow math enthusiasts, competitive programmers, and Olympiad aspirants.
+- ☕ **Buy me a coffee**: Support ongoing open-source mathematics and tooling development via the [GitHub Sponsors Dashboard](https://github.com/sponsors/ishandutta2007).
+
+<p align="center">
+  <a href="https://github.com/sponsors/ishandutta2007">
+    <img src="https://img.shields.io/badge/Sponsor%20me-%E2%9D%A4-pink?style=for-the-badge&logo=githubsponsors" alt="Sponsor on GitHub" />
+  </a>
+</p>
 
 ---
 
