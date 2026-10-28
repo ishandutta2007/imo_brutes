@@ -189,3 +189,12 @@ If you found this repository helpful, insightful, or fun for exploring IMO math 
 ## 📜 License
 
 This project is open-source and distributed under the [MIT License](LICENSE).
+
+## ⭐ Star History
+
+<a href="https://star-history.com/#ishandutta2007/imo_brutes&Timeline" align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/ishandutta2007_imo_brutes_growth.svg">
+    <img alt="Star History Chart" src="assets/ishandutta2007_imo_brutes_growth.svg">
+  </picture>
+</a>
