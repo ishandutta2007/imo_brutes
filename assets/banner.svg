@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="coinGradH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+
+    <linearGradient id="coinGradT" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <linearGradient id="pillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#334155" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Math & Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.3" />
+      <circle cx="40" cy="40" r="1.5" fill="#475569" fill-opacity="0.4" />
+    </pattern>
+
+    <!-- Embedded CSS for dynamic pulsing & floating animations -->
+    <style>
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-12px) rotate(3deg); }
+      }
+      @keyframes floatReverse {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(10px) rotate(-3deg); }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.25; transform: scale(1); }
+        50% { opacity: 0.45; transform: scale(1.08); }
+      }
+      @keyframes coinFlip1 {
+        0%, 100% { transform: translateY(0px) scale(1); }
+        50% { transform: translateY(-8px) scale(1.05); }
+      }
+      @keyframes coinFlip2 {
+        0%, 100% { transform: translateY(0px) scale(1); }
+        50% { transform: translateY(-12px) scale(1.08); }
+      }
+      @keyframes dashAnim {
+        to { stroke-dashoffset: -40; }
+      }
+
+      .floating-node-1 { animation: floatSlow 7s ease-in-out infinite; transform-origin: center; }
+      .floating-node-2 { animation: floatReverse 8s ease-in-out infinite; transform-origin: center; }
+      .glowing-orb { animation: pulseGlow 5s ease-in-out infinite; transform-origin: center; }
+      .coin-card-1 { animation: coinFlip1 4s ease-in-out infinite; transform-origin: center; }
+      .coin-card-2 { animation: coinFlip2 4.5s ease-in-out infinite 0.5s; transform-origin: center; }
+      .signal-line { stroke-dasharray: 6 6; animation: dashAnim 3s linear infinite; }
+      .math-symbol { fill: #64748b; font-family: 'Courier New', monospace; font-size: 16px; opacity: 0.4; }
+    </style>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect width="1200" height="400" fill="url(#bgGrad)" />
+  <rect width="1200" height="400" fill="url(#grid)" />
+
+  <!-- Dynamic Glowing Ambient Lights (in background) -->
+  <circle cx="200" cy="100" r="140" fill="#38bdf8" filter="url(#glow)" class="glowing-orb" />
+  <circle cx="1000" cy="300" r="160" fill="#a855f7" filter="url(#glow)" class="glowing-orb" style="animation-delay: -2.5s;" />
+  <circle cx="600" cy="380" r="120" fill="#6366f1" filter="url(#glow)" class="glowing-orb" style="animation-delay: -1.2s;" />
+
+  <!-- Ambient Math Symbols Floating in Background -->
+  <text x="120" y="80" class="math-symbol">∑ i/2 = n(n+1)/4</text>
+  <text x="1020" y="90" class="math-symbol">A(n) = A(n-1) + n/2</text>
+  <text x="150" y="340" class="math-symbol">∀ s ∈ {H,T}ⁿ ∃ k</text>
+  <text x="960" y="350" class="math-symbol">O(n²) ⟵ Invariant</text>
+
+  <!-- Dynamic Graphic Accents: Connecting Lines and Network -->
+  <path d="M 80 200 C 220 120, 320 280, 480 200" fill="none" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="2" class="signal-line" />
+  <path d="M 720 200 C 880 120, 980 280, 1120 200" fill="none" stroke="#c084fc" stroke-opacity="0.35" stroke-width="2" class="signal-line" />
+
+  <!-- Left Dynamic Simulation Card -->
+  <g class="floating-node-1" transform="translate(70, 140)">
+    <rect width="160" height="120" rx="16" fill="url(#pillGrad)" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.4" />
+    <circle cx="45" cy="50" r="22" fill="url(#coinGradH)" filter="url(#softGlow)" />
+    <text x="45" y="58" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="22" fill="#ffffff" text-anchor="middle">H</text>
+    
+    <circle cx="115" cy="50" r="22" fill="url(#coinGradT)" filter="url(#softGlow)" />
+    <text x="115" y="58" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="22" fill="#ffffff" text-anchor="middle">T</text>
+    
+    <text x="80" y="96" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#94a3b8" text-anchor="middle">Coin-State Flip</text>
+  </g>
+
+  <!-- Right Dynamic Data Matrix Card -->
+  <g class="floating-node-2" transform="translate(970, 140)">
+    <rect width="160" height="120" rx="16" fill="url(#pillGrad)" stroke="#c084fc" stroke-width="1.5" stroke-opacity="0.4" />
+    <text x="80" y="38" font-family="'Courier New', monospace" font-size="13" font-weight="700" fill="#38bdf8" text-anchor="middle">n=4 ➔ 80 flips</text>
+    <text x="80" y="62" font-family="'Courier New', monospace" font-size="13" font-weight="700" fill="#818cf8" text-anchor="middle">n=5 ➔ 240 flips</text>
+    <text x="80" y="86" font-family="'Courier New', monospace" font-size="13" font-weight="700" fill="#c084fc" text-anchor="middle">n=6 ➔ 672 flips</text>
+    <rect x="25" y="100" width="110" height="4" rx="2" fill="#475569" />
+    <rect x="25" y="100" width="85" height="4" rx="2" fill="#38bdf8" />
+  </g>
+
+  <!-- FOREGROUND: Hero Title, Subtitle, Badges/Pills (Guaranteed foreground visibility) -->
+  <g id="foreground-hero">
+    <!-- Main Title -->
+    <text x="600" y="150" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="64" fill="url(#titleGrad)" text-anchor="middle" letter-spacing="-1.5" filter="drop-shadow(0 4px 12px rgba(0,0,0,0.6))">
+      IMO_BRUTES
+    </text>
+
+    <!-- Subtitle / Tagline -->
+    <text x="600" y="195" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="500" font-size="20" fill="#cbd5e1" text-anchor="middle" letter-spacing="0.5" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.8))">
+      Empirical Simulations, Recurrence Mining &amp; Invariant Verifiers for IMO Math
+    </text>
+
+    <!-- Feature Pills in Foreground -->
+    <g transform="translate(600, 245)">
+      <!-- Pill 1: Combinatorics -->
+      <g transform="translate(-250, 0)">
+        <rect x="0" y="0" width="150" height="34" rx="17" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.8" />
+        <circle cx="18" cy="17" r="5" fill="#38bdf8" />
+        <text x="85" y="22" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#e2e8f0" text-anchor="middle">Combinatorics</text>
+      </g>
+
+      <!-- Pill 2: Invariant Discovery -->
+      <g transform="translate(-85, 0)">
+        <rect x="0" y="0" width="170" height="34" rx="17" fill="#1e293b" stroke="#818cf8" stroke-width="1.2" stroke-opacity="0.8" />
+        <circle cx="18" cy="17" r="5" fill="#818cf8" />
+        <text x="94" y="22" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#e2e8f0" text-anchor="middle">Invariant Discovery</text>
+      </g>
+
+      <!-- Pill 3: Python Simulations -->
+      <g transform="translate(100, 0)">
+        <rect x="0" y="0" width="165" height="34" rx="17" fill="#1e293b" stroke="#c084fc" stroke-width="1.2" stroke-opacity="0.8" />
+        <circle cx="18" cy="17" r="5" fill="#c084fc" />
+        <text x="92" y="22" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#e2e8f0" text-anchor="middle">Exact Simulations</text>
+      </g>
+    </g>
+
+    <!-- Subtle Bottom Footer Tag -->
+    <text x="600" y="325" font-family="system-ui, sans-serif" font-weight="400" font-size="14" fill="#64748b" text-anchor="middle">
+      Empirical verification for the International Mathematical Olympiad · Fast &amp; Dependency-Free
+    </text>
+  </g>
+</svg>
